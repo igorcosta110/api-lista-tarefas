@@ -1,0 +1,11 @@
+{
+  "name": "qi-atividade-integradora",
+  "version": "1.0.0",
+  "description": "Atividade Integradora Servicos Web: Construcao de aplicacao completa com api rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igor Costa",
+  "license": "ISC"
+}
