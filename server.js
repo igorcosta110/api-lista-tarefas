@@ -17,11 +17,27 @@ function carregarProdutos(){
     return [];
 };
 
+
+
+
 let produtos = carregarProdutos();
-console.log(produtos)
 
 app.get('/', (req, res)  => {
+    res.json({ message: 'Funcionando'});
+});
+
+app.get('/produtos', (req, res) => {
     res.json(produtos);
+});
+
+app.get('/produtos/:produtoId', (req, res) => {
+    const produtoId = parseInt(req.params.produtoId);
+
+    if(produtos['produtos'][produtoId]){
+        res.json(produtos['produtos'][produtoId]);
+    } else {
+        res.status(404).json({ message: 'Produto não encontrado'});
+    }
 });
 
 app.listen(PORT, () => {
