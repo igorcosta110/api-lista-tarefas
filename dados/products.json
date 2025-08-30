@@ -1,0 +1,23 @@
+{
+  "produtos": {
+    "1": {
+      "id": 1,
+      "nome": "Produto1",
+      "preco": 10
+    },
+    "2": {
+      "id": 2,
+      "nome": "Produto2",
+      "preco": 20
+    },
+    "3": {
+      "nome": "Produto exemplo",
+      "preco": 19.99
+    },
+    "4": {
+      "nome": "lingo lingo",
+      "preco": 22.9
+    }
+  },
+  "proximoId": 5
+}
