@@ -6,7 +6,7 @@
 * **Disciplina:** Serviços para Web
 * **Tema Escolhido:** Gerenciador de Tarefas (To-Do List)
 * **Tecnologias:** Node.js + Express
-* **Persistência de Dados:** Em memória.
+* **Persistência de Dados:** Arquivo JSON.
 
 ---
 
@@ -69,7 +69,7 @@
     "id": 1,
     "title": "Estudar para a prova",
     "description": "Revisar unidades 1 a 6",
-    "completed": false
+    "status": "ok"
   }
   ```
 
@@ -87,7 +87,7 @@
       "id": 1,
       "title": "Estudar para a prova",
       "description": "Revisar unidades 1 a 6",
-      "completed": false
+      "status": "ok"
     }
   ]
   ```
@@ -105,7 +105,7 @@
     "id": 1,
     "title": "Estudar para a prova",
     "description": "Revisar unidades 1 a 6",
-    "completed": false
+    "status": "ok"
   }
   ```
 * **Erro (404 Not Found):**
@@ -126,7 +126,7 @@
   {
     "title": "Estudar para a prova de matemática",
     "description": "Revisar capítulos 1 a 3",
-    "completed": true
+    "status": "ok"
   }
   ```
 * **Resposta de sucesso (200 OK):**
@@ -136,7 +136,7 @@
     "id": 1,
     "title": "Estudar para a prova de matemática",
     "description": "Revisar capítulos 1 a 3",
-    "completed": true
+    "status": "ok"
   }
   ```
 
