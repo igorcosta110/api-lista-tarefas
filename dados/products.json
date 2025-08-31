@@ -2,18 +2,18 @@
   "produtos": {
     "1": {
       "id": 1,
-      "nome": "Produto1",
-      "preco": 10
+      "nome": "teste",
+      "preco": 6.66
     },
     "2": {
       "id": 2,
-      "nome": "Produto2",
-      "preco": 20
+      "nome": "teste final",
+      "preco": 6.66
     },
     "3": {
       "id": 3,
-      "nome": "clovis",
-      "preco": 9.99
+      "nome": "teste",
+      "preco": 6.66
     },
     "4": {
       "id": 4,

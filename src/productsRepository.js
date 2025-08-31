@@ -18,7 +18,23 @@ function salvarProdutos(produtos, proximoId ){
     fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(dados, null, 2));
 };
 
+
+function atualizarProdutos(id, novosDados, produtos, proximoId){
+    if(!Object.prototype.hasOwnProperty.call(produtos, id) || !produtos[id]){
+        return {message: "Erro! Produto não encontrado"}
+    }
+
+    produtos[id].nome = novosDados.nome;
+    produtos[id].preco = novosDados.preco;
+
+    salvarProdutos(produtos, proximoId);
+
+    return {id, ...produtos[id]};
+};
+
+
 module.exports = {
     carregarProdutos,
-    salvarProdutos
+    salvarProdutos,
+    atualizarProdutos
 };

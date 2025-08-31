@@ -1,5 +1,5 @@
 const express = require('express');
-const { carregarProdutos, salvarProdutos } = require('./src/productsRepository');
+const { carregarProdutos, salvarProdutos, atualizarProdutos } = require('./src/productsRepository');
 
 const app = express();
 const PORT = 3000;
@@ -51,6 +51,21 @@ app.post('/produtos', (req, res) => {
         ...novoProduto
     });
 });
+
+
+app.put('/produtos/:id', (req, res) => {
+    const id = Number(req.params.id);
+    const  {nome, preco} = req.body;
+    console.log(id, nome, preco);
+
+    try{
+        const produtoAtualizado = atualizarProdutos(id, {nome, preco}, produtos, proximoId);
+        res.status(200).json(produtoAtualizado);
+    }catch (err){
+        res.status(404).json({ message: err.message });
+    }
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
