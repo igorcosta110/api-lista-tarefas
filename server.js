@@ -1,5 +1,9 @@
 const express = require('express');
-const { carregarProdutos, salvarProdutos, atualizarProdutos } = require('./src/productsRepository');
+const { 
+    carregarProdutos, 
+    salvarProdutos, 
+    atualizarProdutos, 
+    deletarProdutos } = require('./src/productsRepository');
 
 const app = express();
 const PORT = 3000;
@@ -66,6 +70,16 @@ app.put('/produtos/:id', (req, res) => {
     }
 });
 
+app.delete('/produtos/:id', (req, res) => {
+    const id = Number(req.params.id);
+
+    try{
+        const resultado = deletarProdutos(id, produtos, proximoId);
+        res.status(200).json(resultado);
+    }catch(err){
+        res.status(404).json({ message: err.message });
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

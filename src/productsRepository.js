@@ -33,8 +33,22 @@ function atualizarProdutos(id, novosDados, produtos, proximoId){
 };
 
 
+function deletarProdutos(id, produtos, proximoId){
+    if (!Object.prototype.hasOwnProperty.call(produtos, id) || !produtos[id]){
+        throw new Error('Produto não encontrado');
+    }
+
+    delete produtos[id];
+
+    salvarProdutos(produtos, proximoId);
+
+    return {message: `Produto ${id} removido`};
+}
+
+
 module.exports = {
     carregarProdutos,
     salvarProdutos,
-    atualizarProdutos
+    atualizarProdutos,
+    deletarProdutos
 };
