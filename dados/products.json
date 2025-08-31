@@ -17,7 +17,11 @@
     "4": {
       "nome": "lingo lingo",
       "preco": 22.9
+    },
+    "5": {
+      "nome": "clovis",
+      "preco": 9.99
     }
   },
-  "proximoId": 5
+  "proximoId": 6
 }

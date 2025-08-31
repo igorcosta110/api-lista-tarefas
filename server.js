@@ -1,34 +1,13 @@
 const express = require('express');
-const fs = require('fs');
+const { carregarProdutos, salvarProdutos } = require('./src/productsRepository');
 
 const app = express();
 const PORT = 3000;
 
-const PRODUCTS_FILE = 'dados/products.json';
 
 app.use(express.json());
 
-function carregarProdutos(){
-    if(fs.existsSync(PRODUCTS_FILE)){
-        const data = fs.readFileSync(PRODUCTS_FILE);
-        return JSON.parse(data);
-    }
-    return [];
-};
-
-function salvarProdutos(produtos, proximoId ){
-
-    const dados = {
-        produtos: produtos,
-        proximoId: proximoId
-    };
-
-    fs.writeFileSync(PRODUCTS_FILE, JSON.stringify(dados, null, 2));
-};
-
-let dadosProdutos = carregarProdutos();
-let produtos = dadosProdutos.produtos;
-let proximoId = dadosProdutos.proximoId;
+let { produtos, proximoId } = carregarProdutos();
 
 app.get('/', (req, res)  => {
     res.json({ message: 'Funcionando'});
@@ -36,6 +15,16 @@ app.get('/', (req, res)  => {
 
 app.get('/produtos', (req, res) => {
     res.json(produtos);
+});
+
+app.get('/produtos/:produtoId', (req, res) => {
+    const produtoId = req.params.produtoId;
+
+    if(produtos[produtoId]){
+        res.json(produtos[produtoId]);
+    } else {
+        res.status(404).json({ message: 'Produto não encontrado'});
+    }
 });
 
 app.post('/produtos', (req, res) => {
@@ -53,24 +42,13 @@ app.post('/produtos', (req, res) => {
 
     produtos[proximoId] = novoProduto;
 
-    salvarProdutos(produtos, proximoId + 1);
+    proximoId ++;
+
+    salvarProdutos(produtos, proximoId);
 
     res.status(201).json({
         ...novoProduto
     });
-});
-
-app.get('/produtos/:produtoId', (req, res) => {
-    const produtoId = req.params.produtoId;
-
-    console.log('ProdutoId:', produtoId);
-    console.log('Produto:', produtos[produtoId]);
-
-    if(produtos[produtoId]){
-        res.json(produtos[produtoId]);
-    } else {
-        res.status(404).json({ message: 'Produto não encontrado'});
-    }
 });
 
 app.listen(PORT, () => {
