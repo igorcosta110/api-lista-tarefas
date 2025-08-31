@@ -36,6 +36,7 @@ app.post('/produtos', (req, res) => {
     }
 
     novoProduto = {
+        "id": proximoId,
         "nome": nome,
         "preco": preco,
     };

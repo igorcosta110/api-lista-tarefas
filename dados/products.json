@@ -11,17 +11,15 @@
       "preco": 20
     },
     "3": {
-      "nome": "Produto exemplo",
-      "preco": 19.99
+      "id": 3,
+      "nome": "clovis",
+      "preco": 9.99
     },
     "4": {
-      "nome": "lingo lingo",
-      "preco": 22.9
-    },
-    "5": {
+      "id": 4,
       "nome": "clovis",
       "preco": 9.99
     }
   },
-  "proximoId": 6
+  "proximoId": 5
 }
