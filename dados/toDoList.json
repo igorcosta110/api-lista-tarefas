@@ -2,16 +2,10 @@
   "tarefas": {
     "1": {
       "id": 1,
-      "nome": "teste vuque vuque",
-      "descricao": "estudar para prova",
-      "status": "feito"
-    },
-    "9": {
-      "id": 9,
-      "nome": "teste vuque vuque",
-      "descricao": "estudar para prova",
-      "status": "feito"
+      "nome": "Minha primeira tarefa",
+      "descricao": "Este é um exemplo da sua primeira da lista",
+      "status": "A Fazer"
     }
   },
-  "proximoId": 10
+  "proximoId": 2
 }
