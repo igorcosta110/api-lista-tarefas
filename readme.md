@@ -3,10 +3,16 @@
 ## 📌 Informações do Projeto
 
 * **Aluno:** *Igor Costa*
-* **Disciplina:** Serviços para Web
 * **Tema Escolhido:** Gerenciador de Tarefas (To-Do List)
 * **Tecnologias:** Node.js + Express
 * **Persistência de Dados:** Arquivo JSON.
+
+---
+## O que é este projeto?
+
+Surgiu como um trabalho escolar, agora mantido de maneira independente como uma aplicação completa de um kanban para gerenciador de tarefas (semelhante ao trello ou jira).
+
+#### **Projeto ainda em desenvolvimento.**
 
 ---
 
@@ -16,19 +22,20 @@
 
 * [Node.js](https://nodejs.org/) instalado na sua máquina.
 * [npm](https://www.npmjs.com/) (já vem junto com o Node.js).
+* [git](https://git-scm.com/) - para clonar e eventualmente alterar o projeto.
 
 ### Passo a passo
 
-1. Descompacte o diretório:
+1. Clone o repositório para sua máquina local:
 
-    ```
-    QI-API-JS.rar
+    ```bash
+    git clone https://github.com/igorcosta110/api-lista-tarefas.git
     ```
 
 2. Acesse a pasta do projeto:
 
    ```bash
-   cd QI-API-JS
+   cd API-LISTA-TAREFAS
    ```
 3. Instale as dependências:
 
